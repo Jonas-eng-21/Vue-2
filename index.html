@@ -12,20 +12,30 @@
 
   <div id="app">
 
-    <div class="form">
-      <div>
-        <h1>
-          {{ titulo }}
-        </h1>
-      </div>
-      <form>
-        <label for="email" class="label">Email:</label><br>
-        <input type="email" id="email" name="email" class="input"><br>
-        <label for="name" class="label">Nome:</label><br>
-        <input type="text" id="name" name="name" class="input"><br>
-        <button type="submit" class="button">Enviar</button>
-      </form>
-    </div>
+    <form @submit.prevent="addUser">
+      <label>
+        Nome:
+        <input type="text" v-model="newUser.name">
+      </label>
+      <br>
+      <label>
+        Email:
+        <input type="email" v-model="newUser.email">
+      </label>
+      <br>
+      <button type="submit">Adicionar usuário</button>
+    </form>
+
+    <table class="table">
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+      </tr>
+      <tr v-for="user in users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </table>
 
 
   </div>
