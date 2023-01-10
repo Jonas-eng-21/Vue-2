@@ -30,10 +30,14 @@
       <tr>
         <th>Nome</th>
         <th>Email</th>
+        <th>Ações</th>
       </tr>
-      <tr v-for="user in users">
+      <tr v-for="(user, index) in users">
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
+        <td>
+          <button @click="removeUser(index)">Remover</button>
+        </td>
       </tr>
     </table>
 

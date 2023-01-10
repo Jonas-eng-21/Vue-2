@@ -28,6 +28,10 @@ new Vue ({
         name: '',
         email: ''
       }
+    },
+    removeUser(index) {
+      // Remove o usuário da lista usando o índice
+      this.users.splice(index, 1)
     }
   },
 
